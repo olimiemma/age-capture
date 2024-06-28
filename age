@@ -1,0 +1,45 @@
+/**
+ * v0 by Vercel.
+ * @see https://v0.dev/t/Lzu2ajeiaSz
+ * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
+ */
+"use client"
+
+import { useState } from "react"
+
+export default function Component() {
+  const [age, setAge] = useState("")
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
+  return (
+    <div className="flex justify-center items-center h-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h1 className="text-3xl font-bold mb-4 text-center">Enter Your Age</h1>
+        <form className="space-y-4" onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="age" className="block font-medium mb-1">
+              Age
+            </label>
+            <input
+              type="text"
+              id="age"
+              placeholder="Enter your age"
+              className="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2"
+              value={age}
+              onChange={(e) => setAge(e.target.value)}
+            />
+          </div>
+          <div className="flex justify-end">
+            <button
+              type="submit"
+              className="bg-indigo-500 hover:bg-indigo-600 text-white font-medium py-2 px-4 rounded-md"
+            >
+              Next
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  )
+}
